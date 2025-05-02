@@ -1,0 +1,41 @@
+import "../css/MovieCard.css"; // Assuming you have a CSS file for styling
+import { useMovieContext } from "../contexts/MovieContext"; // Importing the context hook
+import { useEffect } from "react";
+
+const MovieCard = ({ movie }) => {
+  const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+  // Function to handle favorite button click
+  const favorite = isFavorite(movie.id);
+
+  function onFavoriteClick(e) {
+    e.preventDefault();
+    if (favorite) removeFromFavorites(movie.id);
+    else addToFavorites(movie);
+    console.log("Favorite button clicked for movie:", movie.title);
+  }
+
+  return (
+    <div className="movie-card">
+      <div className="movie-poster">
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <div className="movie-overlay">
+          <button
+            className={`favorite-btn ${favorite ? "active" : ""} `}
+            onClick={onFavoriteClick}
+          >
+            ♥
+          </button>
+        </div>
+      </div>
+      <div className="movie-info">
+        <h3>{movie.title}</h3>
+        <h3>{movie.release_date?.split("-")[0]}</h3>
+      </div>
+    </div>
+  );
+};
+
+export default MovieCard;
