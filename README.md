@@ -1,13 +1,70 @@
-# React + Vite
+# Movie Tutorial React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a movie application built using React and Vite. It allows users to browse movies, view details, and manage a list of their favorite movies. The app is designed to demonstrate the use of React components, context, and routing.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: Displays a list of movies fetched from an API.
+- **Favorites Page**: Allows users to view and manage their favorite movies.
+- **Navigation**: Includes a responsive navigation bar for easy access to different pages.
+- **Context API**: Manages global state for the application.
+- **CSS Styling**: Custom styles for a polished user interface.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Movie_tutorial_react
+The project is organized as follows:
+
+```
+src/
+  App.jsx          # Main application component
+  main.jsx         # Entry point of the application
+  assets/          # Static assets like images
+  components/      # Reusable components (e.g., NavBar, MovieCard)
+  contexts/        # Context API for state management
+  css/             # CSS files for styling
+  pages/           # Page components (e.g., Home, Favorites)
+  services/        # API service for fetching movie data
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd movie_tutorial
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Technologies Used
+
+- React
+- Vite
+- React Router
+- Context API
+- CSS
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
